@@ -2,6 +2,8 @@ package com.example.myapplication
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.View
+import android.widget.TextView
 
 class MenuThanksActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -11,6 +13,14 @@ class MenuThanksActivity : AppCompatActivity() {
         val menuName = intent.getStringExtra("menuName")
         val menuPrice = intent.getStringExtra("menuPrice")
 
+        val tvMenuName = findViewById<TextView>(R.id.tvMenuName)
+        val tvMenuPrice = findViewById<TextView>(R.id.tvMenuPrice)
 
+        tvMenuName.text = menuName
+        tvMenuPrice.text = menuPrice
+    }
+
+    fun onBackClick(view:View){
+        finish()
     }
 }
